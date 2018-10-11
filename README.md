@@ -1,7 +1,7 @@
 Sample Contractions
 -------------------
 
-This is a collection of large contractions for testing ``opt_einsum`` with.
+This is a collection of large sample tensor network contractions for testing ``opt_einsum`` with.
 
 
 Usage

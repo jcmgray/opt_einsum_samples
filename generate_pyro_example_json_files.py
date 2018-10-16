@@ -47,7 +47,7 @@ def make_hmm_example(length, latent_dim=32, observed_dim=4, batch_dim=10, query=
     inputs = ','.join(inputs)
     output = '' if query is None else b + xs[query]
     eq = inputs + '->' + output
-    name = 'hmm_total_{}_{}_{}_{}_{}'.format(
+    name = 'hmm_{}_{}_{}_{}_{}'.format(
         length, latent_dim, observed_dim, batch_dim, 'total' if query is None else query)
     contract_expression(eq, *shapes, optimize='eager')  # smoke test
     save(name, eq, shapes)
@@ -100,7 +100,7 @@ def make_dbn_example(length, global_dim=2, latent_dim=32, observed_dim=4, batch_
     inputs = ','.join(inputs)
     output = '' if query is None else b + w + xs[query] + ys[query]
     eq = inputs + '->' + output
-    name = 'dbn_total_{}_{}_{}_{}_{}'.format(
+    name = 'dbn_{}_{}_{}_{}_{}'.format(
         length, latent_dim, observed_dim, batch_dim, 'total' if query is None else query)
     contract_expression(eq, *shapes, optimize='eager')  # smoke test
     save(name, eq, shapes)
